@@ -1,45 +1,46 @@
-# Material-UI pickers
-[![npm package](https://img.shields.io/npm/v/material-ui-pickers.svg)](https://www.npmjs.org/package/material-ui-pickers)
-[![npm download](https://img.shields.io/npm/dm/material-ui-pickers.svg)](https://www.npmjs.org/package/material-ui-pickers)
-[![codecov](https://codecov.io/gh/dmtrKovalenko/material-ui-pickers/branch/master/graph/badge.svg)](https://codecov.io/gh/dmtrKovalenko/material-ui-pickers)
-[![Bundle Size](https://img.shields.io/badge/gzip-21.2%20KB-brightgreen.svg)](https://unpkg.com/material-ui-pickers@1.0.0-rc.10/dist/material-ui-pickers.cjs.js)
-[![Build Status](https://api.travis-ci.org/dmtrKovalenko/material-ui-pickers.svg?branch=master)](https://travis-ci.org/dmtrKovalenko/material-ui-pickers)
-> Components, that implements material design date and time pickers for material-ui v1
+# Material-UI Arabic Datepicker
+[![npm package](https://img.shields.io/npm/v/material-ui-pickers.svg)]()
+[![npm download](https://img.shields.io/npm/dm/material-ui-pickers.svg)]()
+> Datepicker component, that implements material design date and time pickers for material-ui v1 customized with arabic header, months and weekdays and English numbers, modfied implementation from materail-ui-pickers
 
 ### Installation
 Available as npm package.
 ```sh
-npm install material-ui-pickers -S
+npm install material-ui-arabic-datepicker -S
 ```
 
-Now choose the library that pickers will use to work with date. We are providing interfaces for [moment](https://momentjs.com/) and [date-fns](https://date-fns.org/). If you are not using moment in the project (or dont have it in the bundle already) we suggest using date-fns, because it's much more lightweight and will be correctly tree-shaked from the bundle. Note, that we support only the 2.0.0-alpha.7 version of date-fns for now (see  #414). Stay tuned!
 
-```sh
-npm i -s date-fns@2.0.0-alpha.7
-// or
-npm i moment -s
-// or
-npm i luxon -s
-```
-
-Then teach pickers which library to use with `MuiPickerUtilsProvider`. This component takes a utils property, and makes it available down the React tree thanks to React context. It should preferably be used at the root of your component tree.
 
 ```jsx
 import MomentUtils from 'material-ui-pickers/utils/moment-utils';
-import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
-import LuxonUtils from 'material-ui-picker/luxon-utils';
-import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider';
+import ArabicDatePicker from 'material-ui-arabic-datepicker/ArabicDatePicker';
+import KeyboardArrowLeft from 'material-ui-icons/KeyboardArrowLeft';
+import KeyboardArrowRight from 'material-ui-icons/KeyboardArrowRight';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 function App() {
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Root />
-    </MuiPickersUtilsProvider>
+
+    <MuiThemeProvider>
+               <EditedDatePicker
+                  fullWidth
+                  leftArrowIcon={<KeyboardArrowLeft />}
+                  rightArrowIcon={<KeyboardArrowRight />}
+                  cancelLabel = "ألغاء"
+                  okLabel = "تأكيد"
+                  openToYearSelection
+                />
+      </MuiThemeProvider>
+
   );
 }
 
 render(<App />, document.querySelector('#app'));
 ```
+
+
+[![Screenshot_from_2018-07-04_17-15-04.png](https://s22.postimg.cc/5wcv2chyp/Screenshot_from_2018-07-04_17-15-04.png)](https://postimg.cc/image/4u2ojsz59/)
 
 And the last step of installation would be an icon font. By default, we are relying on material-icons font, but it's possible to override any icons with the help of corresponding props.
 
@@ -48,13 +49,12 @@ And the last step of installation would be an icon font. By default, we are rely
 ```
 
 ## Documentation
-Check out the [documentation website](https://material-ui-pickers.firebaseapp.com/)
+Check out materail-ui-pickers original [documentation website](https://material-ui-pickers.firebaseapp.com/)
 
-### Recently updated?
-Changelog available [here](https://github.com/dmtrKovalenko/material-ui-pickers/releases)
+## material-ui-pickers
+Check out the [material-ui-pickers](https://www.npmjs.com/package/material-ui-pickers)
 
-### Contributing
-For information about how to contribute, see the [CONTRIBUTING](https://github.com/dmtrKovalenko/material-ui-pickers/blob/master/CONTRIBUTING.md) file.
+
 
 ### LICENSE
 The project is licensed under the terms of [MIT license](https://github.com/dmtrKovalenko/material-ui-pickers/blob/master/LICENSE)
