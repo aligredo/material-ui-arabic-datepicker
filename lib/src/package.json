@@ -1,7 +1,6 @@
 {
   "name": "material-ui-arabic-datepicker",
   "version": "1.0.4",
-  "private": true,
   "description": "React components, that implements material design date and time pickers for material-ui v1 including a customized Datepicker with arabic header, months and weekdays and English numbers, modfied implementation from materail-ui-pickers",
   "main": "build/dist/material-ui-pickers.cjs.js",
   "module": "build/dist/material-ui-pickers.es.js",
